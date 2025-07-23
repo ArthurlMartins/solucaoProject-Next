@@ -1,17 +1,97 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #F1F1F1;
+  --foreground: #ffffff;
     font-family: var(--font-roboto, sans-serif);
+
+  --container-padding-DEFAULT: 1rem;
+  --container-padding-sm: 1.5rem;
+  --container-padding-md: 3rem;
+  --container-padding-lg: 3rem;
+  --container-padding-xl: 4rem;
+  --container-padding-2xl: 6rem;
+  --container-padding-desktop-xl: 180px;
+  --container-padding-super-wide: 315px;
+
+  /* --screen-sm: 640px;
+  --screen-md: 768px;
+  --screen-lg: 1024px;
+  --screen-xl: 1280px;
+  --screen-2xl: 1536px;
+  --screen-desktop-xl: 1920px;
+  --screen-super-wide: 2000px; */
+
+  
 }
+
+
+
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+};
+
+
+
+
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-padding-DEFAULT); 
+  padding-right: var(--container-padding-DEFAULT); 
 }
+
+@media (min-width: 768px) {
+  .container {
+    padding-left: var(--container-padding-sm);
+    padding-right: var(--container-padding-sm);
+  }
+}
+@media (min-width: 1024px) {
+  .container {
+    padding-left: var(--container-padding-md);
+    padding-right: var(--container-padding-md);
+  }
+}
+@media (min-width: 1280px) {
+  .container {
+    padding-left: var(--container-padding-lg);
+    padding-right: var(--container-padding-lg);
+  }
+}
+@media (min-width: 1536px) {
+  .container {
+    padding-left: var(--container-padding-2xl);
+    padding-right: var(--container-padding-2xl);
+  }
+}
+@media (min-width: 1920px) {
+  .container {
+    padding-left: var(--container-padding-desktop-xl);
+    padding-right: var(--container-padding-desktop-xl);
+  }
+}
+
+@media (min-width: 2000px) {
+  .container {
+    padding-left: var(--container-padding-super-wide);
+    padding-right: var(--container-padding-super-wide);
+  }
+}
+
+
+
+  /*
+    Opcional: Se precisar customizar o espaçamento do gutter (20px) caso o gap-5 não seja exatamente 20px
+    ou se você preferir um nome de classe diferente. O 'gap-5' já é 20px por padrão.
+  */
+
+  
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -25,3 +105,5 @@ body {
   color: var(--foreground);
   font-family: var(--font-roboto, sans-serif);
 }
+
+
