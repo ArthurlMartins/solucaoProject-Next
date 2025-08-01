@@ -46,7 +46,7 @@ export default function Header() {
     return () => {
       window.removeEventListener('resize', handleResize);
     };
-  }, [isOpen]);
+  }, [isOpen]); // Depende de isOpen para verificar se precisa fechar ao redimensionar
 
   return (
     <header className="w-full py-7 relative z-30">
@@ -97,7 +97,7 @@ export default function Header() {
               md:hidden /* ESCONDIDO no desktop */
             `}
           >
-            <ul className="flex flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-20 p-4 md:p-0 items-end md:items-start h-full pt-30 md:mr-0 md:pt-0">
+            <ul className="flex flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-20 p-4 md:p-0 items-end mr-4 md:items-start h-full pt-30 md:mr-0 md:pt-0">
               <li>
                 <Link
                   href="#hero"
