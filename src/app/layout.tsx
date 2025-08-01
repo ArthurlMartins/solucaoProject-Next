@@ -32,7 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${roboto.className} ${roboto.variable}`}
+        className={`${roboto.className} ${roboto.variable} overflow-x-hidden-wrapper`}
       >
         {children}
       </body>

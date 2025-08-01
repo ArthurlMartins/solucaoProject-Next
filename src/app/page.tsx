@@ -20,8 +20,9 @@ export default function Home() {
             <Objective />
           </ParallaxProvider>
           <ServicesSection />
-          <About />
-          
+          <ParallaxProvider>
+            <About />
+          </ParallaxProvider>
         </main>
        <Footer />
        <UnderFooter />

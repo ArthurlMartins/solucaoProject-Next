@@ -21,9 +21,8 @@
   --screen-2xl: 1536px;
   --screen-desktop-xl: 1920px;
   --screen-super-wide: 2000px; */
-
-  
 }
+
 
 
 
@@ -84,23 +83,22 @@
   }
 }
 
-
-
-  /*
-    Opcional: Se precisar customizar o espaçamento do gutter (20px) caso o gap-5 não seja exatamente 20px
-    ou se você preferir um nome de classe diferente. O 'gap-5' já é 20px por padrão.
-  */
-
   
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #f1f1f1;
+    --foreground: #f1f1f1;
   }
 }
 
+.overflow-x-hidden-wrapper {
+  overflow-x: hidden;
+}
+
+
 body {
+
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-roboto, sans-serif);
