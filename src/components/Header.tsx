@@ -1,44 +1,19 @@
 'use client'
 
-import Link from "next/link"
-import { useState, useEffect, useRef } from "react";
+import Link from "next/link";
+import { useState, useEffect } from "react";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isMounted, setIsMounted] = useState(false); 
-  const menuRef = useRef(null);
 
   const toggleMenu = () => {
-    if (isOpen) {
-      setIsOpen(false);
-      setTimeout(() => {
-        setIsMounted(false);
-        document.body.style.overflow = 'unset'; 
-      }, 300);
-    } else {
-      setIsMounted(true);
-      document.body.style.overflow = 'hidden';
-      setTimeout(() => {
-        setIsOpen(true);
-      }, 50); 
-    }
+    setIsOpen(!isOpen);
   };
 
   useEffect(() => {
-    return () => {
-      document.body.style.overflow = 'unset';
-    };
-  }, []);
-
-  useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth >= 768 && isOpen) {
-        toggleMenu();
-      }
       if (window.innerWidth >= 768) {
-          setIsOpen(false);
-          setIsMounted(false);
-          document.body.style.overflow = 'unset';
+        setIsOpen(false);
       }
     };
 
@@ -46,17 +21,32 @@ export default function Header() {
     return () => {
       window.removeEventListener('resize', handleResize);
     };
-  }, [isOpen]); // Depende de isOpen para verificar se precisa fechar ao redimensionar
+  }, []);
+
+  // Novo useEffect para gerenciar o scroll apenas em mobile
+  useEffect(() => {
+    const isMobile = window.innerWidth < 768;
+    if (isMobile) {
+      document.body.style.overflow = isOpen ? 'hidden' : 'unset';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isOpen]);
 
   return (
-    <header className="w-full py-7 relative z-30">
-      <nav className="container mx-auto px-4 flex items-center justify-end md:justify-start">
-        {/* Botão para abrir o menu no mobile (ESCONDIDO no desktop) */}
-        <div className="md:hidden absolute top-4 right-4 z-50">
+    <header className="w-full z-30">
+      <div className="container mx-auto px-4 flex items-center justify-between md:justify-start">
+        {/* Mobile menu button */}
+        <div className="md:hidden fixed top-4 right-4 z-50">
           <button
             onClick={toggleMenu}
             className="bg-amber-400 p-3 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-120"
-            aria-label="Alternar menu"
+            aria-label={isOpen ? "Fechar menu" : "Abrir menu"}
+            aria-expanded={isOpen}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -69,103 +59,60 @@ export default function Header() {
               strokeLinecap="round"
               strokeLinejoin="round"
               className="text-black"
-              aria-hidden="true">
+              aria-hidden="true"
+            >
               {isOpen ? (
                 <>
-                  <path d="M18 6 6 18"/>
-                  <path d="m6 6 12 12"/>
+                  <path d="M18 6 6 18" />
+                  <path d="m6 6 12 12" />
                 </>
               ) : (
                 <>
-                  <path d="M4 6h16"/>
-                  <path d="M4 12h16"/>
-                  <path d="M4 18h16"/>
+                  <path d="M4 6h16" />
+                  <path d="M4 12h16" />
+                  <path d="M4 18h16" />
                 </>
               )}
             </svg>
           </button>
         </div>
 
-        {/* Menu para MOBILE (Exibido apenas no mobile e controlado por isMounted) */}
-        {isMounted && (
-          <div
-            ref={menuRef}
-            className={`
-              absolute top-0 right-0 h-screen w-full max-w-sm bg-white shadow-md z-40
-              transition-all duration-300 ease-in-out transform
-              ${isOpen ? "translate-x-0 opacity-100 pointer-events-auto" : "translate-x-full opacity-0 pointer-events-none"}
-              md:hidden /* ESCONDIDO no desktop */
-            `}
-          >
-            <ul className="flex flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-20 p-4 md:p-0 items-end mr-4 md:items-start h-full pt-30 md:mr-0 md:pt-0">
-              <li>
-                <Link
-                  href="#hero"
-                  className="text-black hover:text-amber-400 block py-2 transition-all duration-300 transform hover:scale-110"
-                  onClick={toggleMenu}
-                >
-                  Início
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#objetivo"
-                  className="text-black hover:text-amber-400 block py-2 transition-all duration-300 transform hover:scale-110"
-                  onClick={toggleMenu}
-                >
-                  Objetivo
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#servicos"
-                  className="text-black hover:text-amber-400 block py-2 transition-all duration-300 transform hover:scale-110"
-                  onClick={toggleMenu}
-                >
-                  Serviços
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#about"
-                  className="text-black hover:text-amber-400 block py-2 transition-all duration-300 transform hover:scale-110"
-                  onClick={toggleMenu}
-                >
-                  Quem somos
-                </Link>
-              </li>
-            </ul>
-          </div>
-        )}
-
-        {/* Menu para DESKTOP (Sempre visível no desktop, escondido no mobile) */}
-        <div
+        {/* Navigation menu */}
+        <nav
+          aria-label="Menu principal"
           className={`
-            hidden md:block /* Escondido no mobile, bloco no desktop */
-            md:relative md:h-auto md:w-auto md:bg-transparent md:shadow-none md:translate-x-0 md:opacity-100 md:pointer-events-auto
+            fixed top-0 right-0 h-screen w-full max-w-sm bg-white shadow-md z-40
+            transition-all duration-300 ease-in-out transform
+            ${isOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"}
+            md:relative md:h-auto md:w-auto md:max-w-none md:bg-transparent md:shadow-none
+            md:translate-x-0 md:opacity-100 md:pointer-events-auto
+            md:flex md:items-center md:justify-end
           `}
         >
-          <ul className="flex flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-20 p-4 md:p-0 items-end md:items-start h-full pt-30 md:mr-0 md:pt-0">
+          <ul className="flex flex-col space-y-6 p-4 mt-8 items-end mr-4 h-full pt-20 md:flex-row md:space-y-0 md:space-x-20 md:p-0 md:items-center md:mr-0 md:pt-0">
             <li>
               <Link
                 href="#hero"
                 className="text-black hover:text-amber-400 block py-2 transition-all duration-300 transform hover:scale-110"
+                onClick={toggleMenu}
               >
                 Início
               </Link>
             </li>
             <li>
               <Link
-                href="#objetivo"
+                href="#objective"
                 className="text-black hover:text-amber-400 block py-2 transition-all duration-300 transform hover:scale-110"
+                onClick={toggleMenu}
               >
                 Objetivo
               </Link>
             </li>
             <li>
               <Link
-                href="#servicos"
+                href="#services"
                 className="text-black hover:text-amber-400 block py-2 transition-all duration-300 transform hover:scale-110"
+                onClick={toggleMenu}
               >
                 Serviços
               </Link>
@@ -174,13 +121,23 @@ export default function Header() {
               <Link
                 href="#about"
                 className="text-black hover:text-amber-400 block py-2 transition-all duration-300 transform hover:scale-110"
+                onClick={toggleMenu}
               >
                 Quem somos
               </Link>
             </li>
+            <li>
+              <Link
+                href="https://wa.me/555183251697?text=Tudo bem? Vim pelo site e gostaria de fazer um orçamento."
+                className="text-black block py-2 bg-amber-400 px-3 rounded-4xl transition-all duration-300 hover:scale-110"
+                onClick={toggleMenu}
+              >
+                Faça seu orçamento
+              </Link>
+            </li>
           </ul>
-        </div>
-      </nav>
+        </nav>
+      </div>
     </header>
   );
 }

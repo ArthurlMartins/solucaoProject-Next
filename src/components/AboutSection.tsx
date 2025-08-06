@@ -11,13 +11,14 @@ export default function ObjectiveSection() {
   return (
 
     <ParallaxBanner
+      id="about"
       layers={[
         { image: backgroundImage, speed: -75 },
         {
           children: (
             <div className="w-full">
               <div className="container">
-                <div className="text-slate-300 md:flex text-black md:space-x-[100px] space-y-[100px] justify-center mt-[120px] mb-[120px]">
+                <div className="text-slate-300 md:flex text-center text-black md:space-x-[100px] space-y-[100px] justify-center mt-[120px] mb-[120px]">
                 <div>
                     <Image
                         src="/images/logoOriginal.jpeg"
@@ -29,7 +30,7 @@ export default function ObjectiveSection() {
                   </div>
                   <div>
                     {/* <Badge text="Nosso objetivo" /> */}
-                    <p className="text-2xl font-bold mb-8">Quem somos?</p>
+                    <p className="text-5xl font-bold mb-8">Quem somos?</p>
                     <p className="text-base max-w-[1000px]">
                       A Solução é uma empresa especializada em facilities, oferecendo suporte essencial para a manutenção e conservação de ambientes corporativos, residenciais e institucionais. Com mais de 15 anos de experiência, garantimos excelência operacional por meio de uma equipe qualificada e de um rigoroso acompanhamento dos serviços prestados.
                       <br /><br />
@@ -44,7 +45,7 @@ export default function ObjectiveSection() {
           ),
         },
       ]}
-      className="h-[800px] lg:h-[400px]" 
+      className="h-[900px] lg:h-[500px]" 
     />
 
   );

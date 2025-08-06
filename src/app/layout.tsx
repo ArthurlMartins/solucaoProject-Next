@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Roboto } from "next/font/google";
 import "./globals.css";
+import { head } from "framer-motion/client";
 
 const roboto = Roboto({
   weight: ['400', '500', '700'], // Escolha os pesos que você usa (regular, medium, bold)
@@ -30,9 +31,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <body
-        className={`${roboto.className} ${roboto.variable} overflow-x-hidden-wrapper`}
+        className={`${roboto.className} ${roboto.variable}`}
       >
         {children}
       </body>

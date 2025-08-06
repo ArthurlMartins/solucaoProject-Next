@@ -1,5 +1,15 @@
 @import "tailwindcss";
 
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-roboto, sans-serif);
+}
+
 :root {
   --background: #F1F1F1;
   --foreground: #ffffff;
@@ -14,13 +24,6 @@
   --container-padding-desktop-xl: 180px;
   --container-padding-super-wide: 315px;
 
-  /* --screen-sm: 640px;
-  --screen-md: 768px;
-  --screen-lg: 1024px;
-  --screen-xl: 1280px;
-  --screen-2xl: 1536px;
-  --screen-desktop-xl: 1920px;
-  --screen-super-wide: 2000px; */
 }
 
 
@@ -92,16 +95,7 @@
   }
 }
 
-.overflow-x-hidden-wrapper {
-  overflow-x: hidden;
-}
 
 
-body {
-
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-roboto, sans-serif);
-}
 
 
