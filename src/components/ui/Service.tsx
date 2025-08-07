@@ -1,12 +1,17 @@
 
 
 import Icon from '@mdi/react';
-import { mdiCheckCircle  } from '@mdi/js';
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { WhatsappIcon } from 'hugeicons-react';
 
-export default function Service({title, desc, icon, index }: any) {
+interface ServiceProps {
+  title: string;
+  desc: string;
+  icon: string;
+  index: number;
+}
+
+export default function Service({title, desc, icon, index }: ServiceProps) {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, amount: 0.5 }); // `once: true` anima apenas na primeira vez
 

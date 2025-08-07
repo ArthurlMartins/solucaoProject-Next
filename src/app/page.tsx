@@ -8,7 +8,6 @@ import Objective from "@/components/ObjectiveSection";
 import ServicesSection from "@/components/ServicesSection";
 import UnderFooter from "@/components/UnderFooter";
 import { ParallaxProvider } from 'react-scroll-parallax';
-import Image from "next/image";
 import UpperHeader from "@/components/UpperHeader";
 import ImagesSection from "@/components/ImagesSection";
 

@@ -5,7 +5,7 @@ import { ParallaxBanner } from "react-scroll-parallax";
 import { useState, useEffect } from "react";
 
 export default function ObjectiveSection() {
-    const [backgroundImage, setBackgroundImage] = useState("/images/pintoresImage.webp"); // Imagem para desktop por padrão
+    const [backgroundImage] = useState("/images/pintoresImage.webp"); // Imagem para desktop por padrão
 
   return (
 

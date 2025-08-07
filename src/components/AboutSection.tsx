@@ -1,12 +1,11 @@
  "use client"
 
-import Badge from "./ui/Badge";
 import { ParallaxBanner } from "react-scroll-parallax";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Image from 'next/image';
 
 export default function ObjectiveSection() {
-    const [backgroundImage, setBackgroundImage] = useState("/images/aboutImage.webp"); // Imagem para desktop por padrão
+    const [backgroundImage] = useState("/images/aboutImage.webp"); // Imagem para desktop por padrão
 
   return (
 

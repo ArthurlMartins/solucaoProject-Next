@@ -3,7 +3,6 @@
 import dynamic from 'next/dynamic'; 
 
 import Badge from "./ui/Badge";
-import { motion } from "framer-motion";
 import { mdiVacuumOutline, mdiDoorClosedLock, mdiShovel, mdiTools, mdiOfficeBuildingOutline, mdiBugOutline, mdiWaterPump, mdiBrushVariant   } from '@mdi/js';
 
 
