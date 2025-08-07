@@ -51,7 +51,7 @@ export default function ImagesSection() {
                             className="order-1 mb-6 md:mb-0"
                         >
                             <Image
-                                src="/images/limpezaImage2.webp"
+                                src="/images/limpezaImage.webp"
                                 alt="Um homem limpando o chão com um aspirador de pó"
                                 width={200}
                                 height={100}

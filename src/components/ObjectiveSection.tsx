@@ -38,7 +38,7 @@ export default function ObjectiveSection() {
           ),
         },
       ]}
-      className="h-[500px]" 
+      className="h-[550px] md:h-[500px]" 
     />
 
   );
