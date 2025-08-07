@@ -92,11 +92,11 @@ export default function Header() {
           <ul className="flex flex-col space-y-6 p-4 mt-8 items-end mr-4 h-full pt-20 md:flex-row md:space-y-0 md:space-x-20 md:p-0 md:items-center md:mr-0 md:pt-0">
             <li>
               <Link
-                href="#hero"
+                href="#footer"
                 className="text-black hover:text-amber-400 block py-2 transition-all duration-300 transform hover:scale-110"
                 onClick={toggleMenu}
               >
-                Início
+                Contatos
               </Link>
             </li>
             <li>

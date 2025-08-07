@@ -5,7 +5,7 @@ import { ParallaxBanner } from "react-scroll-parallax";
 import { useState, useEffect } from "react";
 
 export default function ObjectiveSection() {
-    const [backgroundImage, setBackgroundImage] = useState("/images/objectiveImage.webp"); // Imagem para desktop por padrão
+    const [backgroundImage, setBackgroundImage] = useState("/images/pintoresImage.webp"); // Imagem para desktop por padrão
 
   return (
 
@@ -17,7 +17,7 @@ export default function ObjectiveSection() {
           children: (
             <div className="w-full">
               <div className="container">
-                <div className="text-slate-300 text-center flex text-black md:space-x-[100px] justify-center mt-[120px] mb-[120px]">
+                <div className="text-slate-300 text-center flex text-black md:space-x-[100px] justify-center pt-[120px] pb-[120px]">
                   <div>
                     <Badge text="Qualidade acima de tudo" />
                     <h2 className="text-5xl font-bold mb-8">Nosso objetivo</h2>

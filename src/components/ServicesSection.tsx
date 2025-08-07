@@ -29,7 +29,7 @@ export default function ServicesSection() {
     return(
         <>
             <div id='services' className="w-full">
-                <div className="container mt-[120px] mb-[120px]">
+                <div className="container pt-[120px] pb-[120px]">
                     <div className="items-center text-black flex text-center text-black justify-center mb-[30px]">
                         <div>
                             <Badge text="Tudo o que você precisa" />

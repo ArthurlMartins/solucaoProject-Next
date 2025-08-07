@@ -1,13 +1,14 @@
-
+import { InstagramIcon } from "hugeicons-react"
+import { WhatsappIcon } from "hugeicons-react"
 
 export default function Footer() {
     return(
         <>
-            <footer className="w-full bg-black">
+            <footer id="footer" className="w-full bg-black">
                 <div className="container pt-[60px] pb-[60px]">
                     <div className="grid md:grid-cols-2 text-white place-content-between">
 
-                        <div className="space-y-6">
+                        <div className="space-y-12">
                             <div>
                                 <p className="text-2xl font-bold">Empresa Solução -</p>
                                 <p className="text-2xl font-bold">Prestadora de Serviço</p>
@@ -15,13 +16,18 @@ export default function Footer() {
                                 <p className="text-sm text-gray-400">10.997.687/0001-35</p>
                                 <p className="text-sm text-gray-400">CRISTINA DOS SANTOS LOPES ROSA LTDA</p>
                             </div>
-                            <div className="space-y-2">
-                                <a href="mailto:aempresasolucao@gmail.com" className="text-sm block">aempresasolucao@gmail.com</a>
-                                <a href="tel:+5551984182894" className="text-sm block">+55 51 984182894</a>
+                            <div className="space-y-8">
+                                <h2 className="font-bold text-2xl">Contatos</h2>
+                                <div className="space-y-2">
+                                    <a href="mailto:aempresasolucao@gmail.com" className="text-sm block">aempresasolucao@gmail.com</a>
+                                    <a href="tel:+5551984182894" className="text-sm block">+55 51 984182894</a>
+                                </div>
+                                <div className="flex gap-6">
+                                    <a href="https://www.instagram.com/empresasolucao/"><InstagramIcon /></a>
+                                    <a href="https://wa.me/555183251697"><WhatsappIcon /></a>
+                                </div>  
                             </div>
-                            <div>
-                                
-                            </div>                          
+                                                    
                             
                         </div>
                         

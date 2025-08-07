@@ -6,7 +6,7 @@ import React, { useState, useEffect } from "react";
 import Image from 'next/image';
 
 export default function ObjectiveSection() {
-    const [backgroundImage, setBackgroundImage] = useState("/images/objectiveImage.webp"); // Imagem para desktop por padrão
+    const [backgroundImage, setBackgroundImage] = useState("/images/aboutImage.webp"); // Imagem para desktop por padrão
 
   return (
 
@@ -18,15 +18,18 @@ export default function ObjectiveSection() {
           children: (
             <div className="w-full">
               <div className="container">
-                <div className="text-slate-300 md:flex text-center text-black md:space-x-[100px] space-y-[100px] justify-center mt-[120px] mb-[120px]">
+                <div className="text-slate-300 md:flex text-center text-black md:space-x-[100px] space-y-[100px] justify-center pt-[120px] pb-[120px]">
                 <div>
+                  <a href="#">
                     <Image
-                        src="/images/logoOriginal.jpeg"
+                        src="/images/logoOriginal.webp"
                         alt="Foto do meu produto"
                         className="rounded-xl"
                         width={400}
                         height={300}
                     />
+                  </a>
+                    
                   </div>
                   <div>
                     {/* <Badge text="Nosso objetivo" /> */}
@@ -45,7 +48,7 @@ export default function ObjectiveSection() {
           ),
         },
       ]}
-      className="h-[900px] lg:h-[500px]" 
+      className="h-[900px] md:h-[600px] lg:h-[500px]" 
     />
 
   );
