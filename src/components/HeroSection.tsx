@@ -3,6 +3,7 @@ import { motion, useInView  } from "framer-motion"
 import { useRef } from "react";
 import { InstagramIcon } from "hugeicons-react";
 import { WhatsappIcon } from "hugeicons-react";
+import { WHATSAPP_MEMI, INSTAGRAM } from '@/constants';
 
 export default function HeroSection() {
     const ref = useRef(null);
@@ -23,8 +24,8 @@ export default function HeroSection() {
                                 className="rounded-xl"
                             />                        
                         <div className="flex space-x-5">
-                            <a href="https://www.instagram.com/empresasolucao/" target="_blank" rel="noopener noreferrer"><InstagramIcon /></a>
-                            <a href="https://wa.me/555183251697" target="_blank" rel="noopener noreferrer"><WhatsappIcon /></a>
+                            <a href={`https://www.instagram.com/${INSTAGRAM}/`} target="_blank" rel="noopener noreferrer"><InstagramIcon /></a>
+                            <a href={`https://wa.me/${WHATSAPP_MEMI}`} target="_blank" rel="noopener noreferrer"><WhatsappIcon /></a>
                         </div>
                     </div>
                     <div className="flex justify-center relative">

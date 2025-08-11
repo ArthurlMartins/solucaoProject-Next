@@ -3,6 +3,7 @@
 import Icon from '@mdi/react';
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { WHATSAPP_FORMATTED, WHATSAPP_RAW } from '@/constants';
 
 interface ServiceProps {
   title: string;
@@ -10,6 +11,8 @@ interface ServiceProps {
   icon: string;
   index: number;
 }
+
+
 
 export default function Service({title, desc, icon, index }: ServiceProps) {
     const ref = useRef(null);
@@ -56,7 +59,7 @@ export default function Service({title, desc, icon, index }: ServiceProps) {
       </div>
     </div>
     <div className='mt-auto pt-4'>
-      <a href={`https://wa.me/555183251697?text=Tudo bem? Vim pelo site e gostaria de saber mais sobre o serviço: ${title} que vocês oferecem.`}
+      <a href={`https://wa.me/${WHATSAPP_RAW}?text=Tudo bem? Vim pelo site e gostaria de saber mais sobre o serviço: ${title} que vocês oferecem.`}
         className="w-full py-2 px-4 md:py-3 md:px-6 font-bold text-white bg-black rounded-lg shadow-sm hover:bg-amber-400 hover:text-black active:bg-indigo-800 focus:outline-none focus:ring-4 focus:ring-indigo-300 transition duration-100 ease-in-out"
         role="button"
       >

@@ -1,5 +1,6 @@
 import { InstagramIcon } from "hugeicons-react"
 import { WhatsappIcon } from "hugeicons-react"
+import { WHATSAPP_MEMI, TEL_NUMBER, CONTACT_EMAIL, INSTAGRAM } from '@/constants';
 
 export default function Footer() {
     return(
@@ -19,12 +20,12 @@ export default function Footer() {
                             <div className="space-y-8">
                                 <h2 className="font-bold text-2xl">Contatos</h2>
                                 <div className="space-y-2">
-                                    <a href="mailto:aempresasolucao@gmail.com" className="text-sm block">aempresasolucao@gmail.com</a>
-                                    <a href="tel:+5551984182894" className="text-sm block">+55 51 984182894</a>
+                                    <a href={`mailto:${CONTACT_EMAIL}`} className="text-sm block">aempresasolucao@gmail.com</a>
+                                    <a href={`tel:${TEL_NUMBER}`} className="text-sm block">+55 51 98418-2894</a>
                                 </div>
                                 <div className="flex gap-6">
-                                    <a href="https://www.instagram.com/empresasolucao/"><InstagramIcon /></a>
-                                    <a href="https://wa.me/555183251697"><WhatsappIcon /></a>
+                                    <a href={`https://www.instagram.com/${INSTAGRAM}/`}><InstagramIcon /></a>
+                                    <a href={`https://wa.me/${WHATSAPP_MEMI}`}><WhatsappIcon /></a>
                                 </div>  
                             </div>
                                                     

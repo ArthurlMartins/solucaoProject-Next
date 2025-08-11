@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { WHATSAPP_RAW } from '@/constants';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -128,7 +129,7 @@ export default function Header() {
             </li>
             <li>
               <Link
-                href="https://wa.me/555183251697?text=Tudo bem? Vim pelo site e gostaria de fazer um orçamento."
+                href={`https://wa.me/${WHATSAPP_RAW}?text=Tudo bem? Vim pelo site e gostaria de fazer um orçamento.`}
                 className="text-black block py-2 bg-amber-400 px-3 rounded-4xl transition-all duration-300 hover:scale-110"
                 onClick={toggleMenu}
               >
