@@ -60,7 +60,7 @@ export default function ImagesSection() {
                         </motion.div>
                         <div className="max-w-[300px] md:ml-6 space-y-[30px] order-2">
                             <h2 className="font-bold text-5xl">Do seu jeito!</h2>
-                            <p>Entendemos que cada cliente tem uma necessidade única. Por isso, nossos serviços de facilities são totalmente personalizáveis, se adaptando ao tamanho, à rotina e ao orçamento do seu negócio. Seja em Porto Alegre ou em qualquer cidade da lugar do <span className="font-bold">Rio Grande do Sul</span>, estamos prontos para oferecer soluções sob medida que simplificam a sua gestão e entregam exatamente o que você precisa.</p>
+                            <p>Entendemos que cada cliente tem uma necessidade única. Por isso, nossos serviços de facilities são totalmente personalizáveis, se adaptando ao tamanho, à rotina e ao orçamento do seu negócio. Seja em Porto Alegre ou em qualquer lugar do <span className="font-bold">Rio Grande do Sul</span>, estamos prontos para oferecer soluções sob medida que simplificam a sua gestão e entregam exatamente o que você precisa.</p>
                         </div> 
                     </div>    
                 </div>
