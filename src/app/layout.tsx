@@ -13,6 +13,9 @@ const roboto = Roboto({
 export const metadata: Metadata = {
   title: "Empresa Solução - Serviços de Facilities e Manutenção no Rio Grande do Sul",
   description: "Oferecemos soluções completas em serviços de facilities, como limpeza, portaria, jardinagem, detetização e manutenção. Atendemos em todo Rio Grande do Sul.",
+  icons: {
+    icon: '/favicon.ico',
+  },
 };
 
 export default function RootLayout({
